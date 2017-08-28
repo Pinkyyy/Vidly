@@ -16,12 +16,10 @@ namespace Vidly.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-
             var listOfCustomers = new ListViewModel
             {
                 Customers = _customers
             };
-
             return View(listOfCustomers);
         }
 
@@ -33,7 +31,14 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var customer = _customers.Find(c => c.Id == id);
+            return View(customer);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Customer customer)
+        {
+            return Content("Data was saved");
         }
     }
 }

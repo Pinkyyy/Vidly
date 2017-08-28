@@ -6,14 +6,33 @@
 
 <h2>Customers</h2>
 
-<table class="table table-striped table-hover">
-    <thead>
-    <tr><th>Name</th></tr>
-    </thead>
-    <tbody>
+@if (Model.Customers.Count > 0)
+{
+
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr><th>Name</th></tr>
+        </thead>
+        <tbody>
         @foreach (var customer in Model.Customers)
         {
-            <tr><td>@Html.ActionLink(customer.Name, "Details", "Customer", new {id = customer.Id})</td></tr>
+            <tr><td>
+                @Html.ActionLink(
+                    linkText: customer.Name,
+                    actionName: "Details",
+                    controllerName: "Customer",
+                    routeValues: new
+                    {
+                        id = customer.Id
+                    },
+                    htmlAttributes: null
+                    )
+            </td></tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+}
+else
+{
+    <p>We don't have any customers yet.</p>
+}
