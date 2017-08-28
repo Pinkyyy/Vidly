@@ -1,0 +1,29 @@
+Section 2: Fundamentals
+--------------------------------
+
+Environment:
+- Productivity Power Tools
+- Web Essentials
+
+ctrl+Tab - przeskakiwanie pomiêdzy zak³adkami
+
+Themes:
+Free themes for bootstrap bootswatch.com
+New css file in Content folder
+Reference to new file in App_Start/BoundleConfig.cs
+
+Code snipped:
+mvcaction4 + Tab -> generate new acion in controller
+
+Attribute Route Constraints
+
+Section 3: Working with data
+--------------------------------
+
+
+
+
+
+
+
+
