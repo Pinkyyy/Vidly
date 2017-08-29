@@ -19,6 +19,28 @@ Attribute Route Constraints
 
 Section 3: Working with data
 --------------------------------
+Problem with enabling migrations
+PM> Install-Package EntityFramework -IncludePrerelease
+
+PM> enable-migrations
+PM> add-migration Intro
+PM> update-database
+PM> add-migration Intro -force 		-> nadpisanie istniejacej migracji
+PM> cls 				-> czyszczenie ekranu
+
+Problem with Invalid value for key 'attachdbfilename'.
+Change connectionString="Data Source=.\SQLEXPRESS in Web.config
+
+DataAnnotations:
+[Required]
+[StringLength(255)]
+
+FluentAPI - zamiat DataAnnotations
+
+Method Include is from namespace using System.Data.Entity;
+
+
+
 
 
 

@@ -45,6 +45,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -144,12 +152,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -204,15 +206,39 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708281036335_Intro.cs" />
+    <Compile Include="Migrations\201708281036335_Intro.Designer.cs">
+      <DependentUpon>201708281036335_Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281046421_InitialTables.cs" />
+    <Compile Include="Migrations\201708281046421_InitialTables.Designer.cs">
+      <DependentUpon>201708281046421_InitialTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281217553_AddCustomerIsSubscribedToNewsletter.cs" />
+    <Compile Include="Migrations\201708281217553_AddCustomerIsSubscribedToNewsletter.Designer.cs">
+      <DependentUpon>201708281217553_AddCustomerIsSubscribedToNewsletter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281224446_AddMembershipType.cs" />
+    <Compile Include="Migrations\201708281224446_AddMembershipType.Designer.cs">
+      <DependentUpon>201708281224446_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281228094_PopulateAddMembershipTypes.cs" />
+    <Compile Include="Migrations\201708281228094_PopulateAddMembershipTypes.Designer.cs">
+      <DependentUpon>201708281228094_PopulateAddMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708281236578_AddCustomerNameDataAnnotations.cs" />
+    <Compile Include="Migrations\201708281236578_AddCustomerNameDataAnnotations.Designer.cs">
+      <DependentUpon>201708281236578_AddCustomerNameDataAnnotations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModels\Customer\ListViewModel.cs" />
-    <Compile Include="ViewModels\Movie\ListViewModel.cs" />
     <Compile Include="ViewModels\Movie\RandomViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +321,26 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708281036335_Intro.resx">
+      <DependentUpon>201708281036335_Intro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281046421_InitialTables.resx">
+      <DependentUpon>201708281046421_InitialTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281217553_AddCustomerIsSubscribedToNewsletter.resx">
+      <DependentUpon>201708281217553_AddCustomerIsSubscribedToNewsletter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281224446_AddMembershipType.resx">
+      <DependentUpon>201708281224446_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281228094_PopulateAddMembershipTypes.resx">
+      <DependentUpon>201708281228094_PopulateAddMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708281236578_AddCustomerNameDataAnnotations.resx">
+      <DependentUpon>201708281236578_AddCustomerNameDataAnnotations.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

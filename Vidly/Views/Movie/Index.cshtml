@@ -1,4 +1,4 @@
-﻿@model Vidly.ViewModels.Movie.ListViewModel
+﻿@model IEnumerable<Vidly.Models.Movie>
 
 @{
     ViewBag.Title = "Index";
@@ -19,7 +19,7 @@
     </tr>
     </thead>
     <tbody>
-        @foreach (var movie in Model.Movies)
+        @foreach (var movie in Model)
         {
             <tr>
                 <td>@movie.Id</td>

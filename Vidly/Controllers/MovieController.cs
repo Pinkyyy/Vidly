@@ -49,13 +49,8 @@ namespace Vidly.Controllers
                 sortBy = "Name";
             }
 
-            var movies = new ListViewModel
-            {
-                Movies = _movies
-            };
-
             //return Content(string.Format("pageIndex={0}, sortBy={1}", pageIndex, sortBy));
-            return View(movies);
+            return View(_movies);
         }
 
         [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
