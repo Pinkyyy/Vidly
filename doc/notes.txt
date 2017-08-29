@@ -39,6 +39,9 @@ FluentAPI - zamiat DataAnnotations
 
 Method Include is from namespace using System.Data.Entity;
 
+Jeœli migracja generuje nowa tabelkê z dwoma kluczami, z których jeden ma postaæ nazwa_Id to sprawdziæ, czy w klasie powi¹zanej typ identyfikatora jest taki sam jaki 
+stanowi¹cy klucz obcy (no. Genre.Id typ int a Movie.GenreId typ byte)
+
 
 
 

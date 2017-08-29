@@ -17,6 +17,7 @@ else {
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Membership Type</th>
                 <th>Discount Rate</th>
             </tr>
         </thead>
@@ -36,6 +37,7 @@ else {
                         htmlAttributes: null
                         )
                 </td>
+                <td>@customer.MembershipType.Name</td>
                 <td>@customer.MembershipType.DiscountRate%</td>
             </tr>
         }

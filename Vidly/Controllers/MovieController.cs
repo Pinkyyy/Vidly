@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -8,26 +8,17 @@ namespace Vidly.Controllers
 {
     public class MovieController : Controller
     {
-        private readonly List<Movie> _movies = new List<Movie>
-        {
-            new Movie {Name = "Movie 1", Id = 1},
-            new Movie {Name = "Movie 2", Id = 2},
-            new Movie {Name = "Movie 3", Id = 3},
-            new Movie {Name = "Movie 4", Id = 4}
-        };
+        private readonly ApplicationDbContext _dbContext;
 
+        public MovieController()
+        {
+            _dbContext = new ApplicationDbContext();
+        }
         // GET: Movies
         public ActionResult Random()
         {
-            var movie = _movies.Single(m => m.Id == 1);
-
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Customer 1", Id = 1},
-                new Customer {Name = "Customer 2", Id = 2},
-                new Customer {Name = "Customer 3", Id = 3},
-                new Customer {Name = "Customer 4", Id = 4}
-            };
+            var movie = _dbContext.Movies.Single(m => m.Id == 1);
+            var customers = _dbContext.Customers.ToList();
 
             var viewModel = new RandomViewModel
             {
@@ -49,8 +40,9 @@ namespace Vidly.Controllers
                 sortBy = "Name";
             }
 
+            var movies = _dbContext.Movies.Include(m => m.Genre).ToList();
             //return Content(string.Format("pageIndex={0}, sortBy={1}", pageIndex, sortBy));
-            return View(_movies);
+            return View(movies);
         }
 
         [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
@@ -71,7 +63,11 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            return Content("Details id" + id);
+            var movie = _dbContext.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+            if (movie == null)
+                return HttpNotFound();
+
+            return View(movie);
         }
 
         public ActionResult Delete(int id)
