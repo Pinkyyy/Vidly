@@ -264,6 +264,8 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Customer\FormViewModel.cs" />
+    <Compile Include="ViewModels\Movie\FormViewModel.cs" />
     <Compile Include="ViewModels\Movie\RandomViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +335,8 @@
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Movie\Index.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Movie\Form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

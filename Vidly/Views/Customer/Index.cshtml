@@ -19,6 +19,7 @@ else {
                 <th>Name</th>
                 <th>Membership Type</th>
                 <th>Discount Rate</th>
+                <th colspan="3"></th>
             </tr>
         </thead>
         <tbody>
@@ -39,6 +40,12 @@ else {
                 </td>
                 <td>@customer.MembershipType.Name</td>
                 <td>@customer.MembershipType.DiscountRate%</td>
+                <td>
+
+                    @Html.ActionLink("Edit", "Edit", new { id = customer.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = customer.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = customer.Id })
+                </td>
             </tr>
         }
         </tbody>
