@@ -5,7 +5,7 @@ using MembershipType = Vidly.Enums.MembershipType;
 
 namespace Vidly.AttributeValidators
 {
-    public class Min18YearsIfAMember : ValidationAttribute
+    public class Min18YearsIfAMemberValidator : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {

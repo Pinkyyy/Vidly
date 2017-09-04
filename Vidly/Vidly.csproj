@@ -198,7 +198,8 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="AttributeValidators\Min18YearsIfAMember.cs" />
+    <Compile Include="AttributeValidators\Min18YearsIfAMemberValidator.cs" />
+    <Compile Include="AttributeValidators\NumberInStockRangeValidator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -259,6 +260,10 @@
     <Compile Include="Migrations\201709011224553_UpdateCustomerBirthDate.cs" />
     <Compile Include="Migrations\201709011224553_UpdateCustomerBirthDate.Designer.cs">
       <DependentUpon>201709011224553_UpdateCustomerBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709040718413_UpdateMoviesNameRequired.cs" />
+    <Compile Include="Migrations\201709040718413_UpdateMoviesNameRequired.Designer.cs">
+      <DependentUpon>201709040718413_UpdateMoviesNameRequired.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -398,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709011224553_UpdateCustomerBirthDate.resx">
       <DependentUpon>201709011224553_UpdateCustomerBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709040718413_UpdateMoviesNameRequired.resx">
+      <DependentUpon>201709040718413_UpdateMoviesNameRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

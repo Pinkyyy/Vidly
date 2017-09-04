@@ -84,7 +84,6 @@ namespace Vidly.Controllers
                     MembershipTypes = _dbContext.MembershipTypes.ToList()
                 };
                 return View("Form", viewModel);
-                //return (customer.Id == 0) ? View("Create", viewModel) : View("Edit", viewModel);
             }
 
             if (customer.Id == 0)

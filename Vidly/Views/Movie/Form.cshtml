@@ -15,27 +15,38 @@ else
 {
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.Movie.Id)
-
+    
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.Name)
         @Html.TextBoxFor(m => m.Movie.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Movie.Name)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.ReleaseDate)
         @Html.TextBoxFor(m => m.Movie.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.ReleaseDate)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.DateAdded)
         @Html.TextBoxFor(m => m.Movie.DateAdded, "{0:d MMM yyyy}", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Movie.DateAdded)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.NumberInStock)
         @Html.TextBoxFor(m => m.Movie.NumberInStock, "{0:d}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Movie.NumberInStock)
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Movie.GenreId)
-        @Html.DropDownListFor(m => m.Movie.GenreId, new SelectList(Model.Genres, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Movie.GenreId, new SelectList(Model.Genres, "Id", "Name"), "", new {@class = "form-control"})
+        @Html.ValidationMessageFor(m => m.Movie.GenreId)
     </div>
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.Movie.Id)
     <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
 }
