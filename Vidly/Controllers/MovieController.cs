@@ -95,7 +95,7 @@ namespace Vidly.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Movie movie)
+        public ActionResult Save([Bind(Include = "Id,Name,ReleaseDate,GenreId,DateAdded,NumberInStock")]Movie movie)
         {
             if (!ModelState.IsValid)
             {
@@ -109,16 +109,18 @@ namespace Vidly.Controllers
 
             if (movie.Id == 0)
             {
-                _dbContext.Movies.Add(movie);
+                //_dbContext.Movies.Add(movie);
+                _dbContext.Entry(movie).State = EntityState.Added;
             }
             else
             {
-                var movieInDb = _dbContext.Movies.Single(m => m.Id == movie.Id);
-                movieInDb.Name = movie.Name;
-                movieInDb.DateAdded = movie.DateAdded;
-                movieInDb.GenreId = movie.GenreId;
-                movieInDb.ReleaseDate = movie.ReleaseDate;
-                movieInDb.NumberInStock = movie.NumberInStock;
+                _dbContext.Entry(movie).State = EntityState.Modified;
+                //var movieInDb = _dbContext.Movies.Single(m => m.Id == movie.Id);
+                //movieInDb.Name = movie.Name;
+                //movieInDb.DateAdded = movie.DateAdded;
+                //movieInDb.GenreId = movie.GenreId;
+                //movieInDb.ReleaseDate = movie.ReleaseDate;
+                //movieInDb.NumberInStock = movie.NumberInStock;
             }
             _dbContext.SaveChanges();
             return RedirectToAction("Index", "Movie");

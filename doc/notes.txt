@@ -42,6 +42,21 @@ Method Include is from namespace using System.Data.Entity;
 Jeœli migracja generuje nowa tabelkê z dwoma kluczami, z których jeden ma postaæ nazwa_Id to sprawdziæ, czy w klasie powi¹zanej typ identyfikatora jest taki sam jaki 
 stanowi¹cy klucz obcy (no. Genre.Id typ int a Movie.GenreId typ byte)
 
+Postman - plugin for chrome browser
+
+Public contract - DTO - Data Transfer Object, used to transfer data to client
+
+PM> install-package automapper -version:4.1
+App_Start->MappingProfile class with MappingProfile constructor with CreateMap
+
+
+
+
+
+
+
+
+
 
 
 
