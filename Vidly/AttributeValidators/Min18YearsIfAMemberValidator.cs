@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Vidly.Models;
 using MembershipType = Vidly.Enums.MembershipType;
+using Vidly.Dtos;
 
 namespace Vidly.AttributeValidators
 {

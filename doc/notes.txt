@@ -48,6 +48,14 @@ Public contract - DTO - Data Transfer Object, used to transfer data to client
 
 PM> install-package automapper -version:4.1
 App_Start->MappingProfile class with MappingProfile constructor with CreateMap
+add configuration to Global.asax.cs
+
+camel case:
+webApiCongfig.cs -> 
+//var settings = config.Formatters.JsonFormatter.SerializerSettings;
+            //settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+
+
 
 
 
