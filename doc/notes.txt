@@ -55,7 +55,8 @@ webApiCongfig.cs ->
 //var settings = config.Formatters.JsonFormatter.SerializerSettings;
             //settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
-
+PM>install-package bootbox 
+PM>install-package jquery.datatables
 
 
 
