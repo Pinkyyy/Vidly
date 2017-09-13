@@ -6,9 +6,13 @@
 }
 
 <h2>Customers</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
     <table id="customers" class="table table-striped table-hover">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
                 <th>Membership Type</th>
                 <th>Discount Rate</th>
@@ -21,50 +25,6 @@
     </table>
 
 @section scripts 
-{
-    <script>
-        $(document).ready(function () {
-            var table = $("#customers").DataTable({
-                ajax: {
-                    url: "api/customer",
-                    dataSrc:""
-                },
-                columns: [
-                    {
-                        data: "name",
-                        render: function (data, type, customer) {
-                            return "<a href='customer/edit/" + customer.id + "'>" + customer.name + "</a>";
-                        }
-                    },
-                    {
-                        data:"membershipType.name"
-                    },
-                    {
-                        data: "membershipType.discountRate"
-                    },
-                    {
-                        data: "id",
-                        render: function (data) {
-                            return "<button data-customer-id="+data+" class='btn-link js-delete'>Delete</button>";
-                        }
-                    }
-                ]
-            });
-
-        $("#customers").on("click", ".js-delete", function () {
-            var button = $(this);
-            bootbox.confirm("Are you sure you want to delete this customer?", function (result) {
-                if (result) {
-                    $.ajax({
-                        url: "api/customer/" + button.attr("data-customer-id"),
-                        method: "DELETE",
-                        success: function () {
-                            table.row(button.parents("tr")).remove().draw();
-                        }
-                    });
-                }
-            });
-        });
-    });
-    </script>
+{    
+    <script src="@Url.Content("~/Scripts/Customer/customer.js")"></script>
 }
