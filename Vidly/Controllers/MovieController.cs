@@ -41,8 +41,11 @@ namespace Vidly.Controllers
             }
 
             var movies = _dbContext.Movies.Include(m => m.Genre).ToList();
-            //return Content(string.Format("pageIndex={0}, sortBy={1}", pageIndex, sortBy));
-            return View(movies);
+
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View(movies);
+            else
+                return View("IndexReadOnly", movies);
         }
 
         [Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1,12)}")]
@@ -51,6 +54,7 @@ namespace Vidly.Controllers
             return Content(year + "/" + month);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Create()
         {
             var viewModel = new FormViewModel

@@ -58,6 +58,21 @@ webApiCongfig.cs ->
 PM>install-package bootbox 
 PM>install-package jquery.datatables
 
+ASP.NET Identity Framework
+RestrictingAccess - [Authorize] befor action
+AnnonymousAccess - [AllowAnnonymous]
+Qwerty1!
+
+SocialLogins OAuth - Open Authorisation, using by providers example Google
+
+select project + F4, copy new address and paste it into web tab on properties window -> to enalbe ssl
+
+https://developers.facebook.com/
+PM>Install-Package Microsoft.Owin.Security.Facebook
+
+
+
+
 
 
 
