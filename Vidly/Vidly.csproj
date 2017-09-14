@@ -296,14 +296,35 @@
     <Compile Include="Migrations\201709132024174_AddApplicationUserDrivingLicense.Designer.cs">
       <DependentUpon>201709132024174_AddApplicationUserDrivingLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709140915290_AddApplicationUserPhoneNumber.cs" />
+    <Compile Include="Migrations\201709140915290_AddApplicationUserPhoneNumber.Designer.cs">
+      <DependentUpon>201709140915290_AddApplicationUserPhoneNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709140922480_AddApplicationUserPhoneNumberRequired.cs" />
+    <Compile Include="Migrations\201709140922480_AddApplicationUserPhoneNumberRequired.Designer.cs">
+      <DependentUpon>201709140922480_AddApplicationUserPhoneNumberRequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709141058515_RemoveApplicationUserPhoneNumberDuplicate.cs" />
+    <Compile Include="Migrations\201709141058515_RemoveApplicationUserPhoneNumberDuplicate.Designer.cs">
+      <DependentUpon>201709141058515_RemoveApplicationUserPhoneNumberDuplicate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Account\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="Models\Account\ExternalLoginListViewModel.cs" />
+    <Compile Include="Models\Account\ForgotPasswordViewModel.cs" />
+    <Compile Include="Models\Account\ForgotViewModel.cs" />
+    <Compile Include="Models\Account\LoginViewModel.cs" />
+    <Compile Include="Models\Account\ResetPasswordViewModel.cs" />
+    <Compile Include="Models\Account\SendCodeViewModel.cs" />
+    <Compile Include="Models\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Account\RegisterViewModel.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -685,6 +706,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709132024174_AddApplicationUserDrivingLicense.resx">
       <DependentUpon>201709132024174_AddApplicationUserDrivingLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709140915290_AddApplicationUserPhoneNumber.resx">
+      <DependentUpon>201709140915290_AddApplicationUserPhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709140922480_AddApplicationUserPhoneNumberRequired.resx">
+      <DependentUpon>201709140922480_AddApplicationUserPhoneNumberRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709141058515_RemoveApplicationUserPhoneNumberDuplicate.resx">
+      <DependentUpon>201709141058515_RemoveApplicationUserPhoneNumberDuplicate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
