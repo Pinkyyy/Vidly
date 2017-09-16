@@ -70,6 +70,94 @@ select project + F4, copy new address and paste it into web tab on properties wi
 https://developers.facebook.com/
 PM>Install-Package Microsoft.Owin.Security.Facebook
 
+Glimpse - for real time diagnostics inside app
+PM>install-package glimpse.mvc5
+PM>install-package glimpse.ef6
+https://localhost:44344/glimpse.axd
+
+public virtual - w³¹cza lazy loading co jest niewskazane w apckach webowych, wtedy leci kilka zapytañ z opóŸnieniem, a nie jedno z inner joinami
+problem N+1
+1 query for customers, N queries for MembershipTypes for every customers
+
+Cachowanie - HTML
+[OutputCache(Duration=50, Location=OutputCacheLocation.Server, VaryByParam="*")]
+- mo¿e byæ te¿ cachowanie po stronie klienta
+[OutputCache(Duration=0, VaryByParam="*", NoStore=true)] - disable caching
+Cachowanie - dane
+if(MemoryCache.Default["NazwaDanych"]
+
+in web.config <system.web> add <SessionState mode="Off">
+
+MVC Controller - to return markup
+API Controller - to return data
+
+zencoding with webessentials
+div.form-group>label+input[type='text'].form-control + Tab
+
+ctrl+Shift+N lub ctrl+Shift+T - w³¹cza wyszukiwarkê plików ReSharper'a
+
+autocomplete
+PM>install-package Twitter.Typeahead
+https://twitter.github.io/typeahead.js/examples/
+
+toast notification
+PM>install-package toastr
+
+PM>update-database script
+PM>update-database script -SourceMigration:nameOfTheMigration
+
+In web.config
+encrypt
+Developer Command Prompt -> run as administrator
+encryption-> aspnet_regiis -pef "appSettings" "D:\Udemy\Deploy" -prov "DataProtectionConfigurationProvider"
+decryption-> aspnet_regiis -pdf "appSettings" "D:\Udemy\Deploy"
+<appSettings configSource="AppSettings.config"></appSettings>
+
+Friendly Error pages
+<customErrors mode="On">
+      <error statusCode="404" redirect="~/404.html"/>
+    </customErrors>
+in <system.webServer> - configuration for IIS
+<httpErrors errorMode="Custom">
+      <remove statusCode="404"/>
+      <error statusCode="404" path="404.html" responseMode="File"/>
+    </httpErrors>
+
+Errors Logging - Elmah
+PM>install-package Elmah
+elmah.axd
+
+color.adobe.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
